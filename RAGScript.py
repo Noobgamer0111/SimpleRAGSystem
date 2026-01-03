@@ -15,7 +15,7 @@
 # Documentation: https://lmstudio.ai/docs/python
 
 import lmstudio as lms
-import requests
+import wget
 import os
 import numpy as np
 
@@ -32,7 +32,7 @@ file_path = "cat-facts.txt"
 if not os.path.exists(file_path):
     print(f"Downloading knowledge base from HuggingFace...")
     url = "https://huggingface.co/ngxson/demo_simple_rag_py/raw/main/cat-facts.txt"
-    response = requests.get(url)
+    response = wget.download(url)
     with open(file_path, "w", encoding="utf-8") as f:
         f.write(response.text)
     print(f"Knowledge base downloaded and saved to {file_path}")

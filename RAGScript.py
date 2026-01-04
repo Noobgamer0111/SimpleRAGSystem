@@ -14,6 +14,7 @@
 # For the this example, I will use LM Studio as the LM backend.
 # Documentation: https://lmstudio.ai/docs/python
 
+from venv import logger
 import lmstudio as lms
 import requests
 import os

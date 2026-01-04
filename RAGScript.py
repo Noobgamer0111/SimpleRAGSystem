@@ -31,7 +31,11 @@ client = None
 
 # 4) Define a function to define cosine similarity between two vectors.
 def cosine_similarity(vec1, vec2):
-    return float(np.dot(vec1, vec2) / (np.linalg.norm(vec1) * np.linalg.norm(vec2)))
+    norm1 = np.linalg.norm(vec1)
+    norm2 = np.linalg.norm(vec2)
+    if norm1 == 0 or norm2 == 0:
+        return 0.0
+    return float(np.dot(vec1, vec2) / (norm1 * norm2))
 
 # 5) Define a function to retrieve the most relevant documents based on a query.
 def retrieve(query, embeddings, embed_model, top_n=3):

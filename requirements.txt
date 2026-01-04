@@ -1,0 +1,4 @@
+lmstudio
+requests
+numpy
+pytest
